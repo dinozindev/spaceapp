@@ -1,13 +1,14 @@
 import { styled } from "styled-components"
 
 const StyledBanner = styled.figure`
-    width: 100%;
+    max-width: 100%;
     background-image: ${props => `url(${props.$background})`};
     background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
+    align-items: center;
     flex-grow: 1;
-    height: 328px;
+    margin: 0;
+    min-height: 328px;
     border-radius: 20px; 
 `
 

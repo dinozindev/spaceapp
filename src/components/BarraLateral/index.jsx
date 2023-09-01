@@ -14,7 +14,7 @@ const StyledUl = styled.ul`
     list-style:none;
     padding: 0;
     margin: 0;
-    width: 212px;
+    width: 240px;
 `
 
 
