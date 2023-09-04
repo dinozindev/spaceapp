@@ -8,8 +8,8 @@ const StyledInput = styled.input`
     font-family: "Gandhi Sans", sans-serif;
     font-weight: 400;
     padding: 16px 12px;
-    width: 566px;
-    height: 56px;
+    width: 602px;
+    height: 40px;
     background-color: transparent;
     background-image: url("src/components/CampoTexto/search.svg");
     background-repeat: no-repeat;

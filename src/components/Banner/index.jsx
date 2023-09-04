@@ -4,6 +4,7 @@ const StyledBanner = styled.figure`
     max-width: 100%;
     background-image: ${props => `url(${props.$background})`};
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     flex-grow: 1;
