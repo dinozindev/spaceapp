@@ -48,9 +48,10 @@ const ButtonContainer = styled.div`
 `
 
 
-export default function Imagem({ foto }) {
+// passa para a prop aoZoomSolicitado a foto que deseja ser expandida como parâmetro para aoFotoSolicitada, que irá atualizar o estado e fazer a foto aparecer no modal.
+export default function Imagem({ foto, expandida=false, aoZoomSolicitado }) {
     return (
-        <ImagemContainer>
+        <ImagemContainer $expandida={expandida}>
             <Img src={foto.path} alt={foto.titulo} />
             <CaptionSection>
                 <CaptionTitle>{foto.titulo}</CaptionTitle>
@@ -58,11 +59,11 @@ export default function Imagem({ foto }) {
                     <CaptionSource>Fonte/fotógrafo/satélite</CaptionSource>
                     <ButtonContainer>
                         <BotaoIcone>
-                            <img src="./public/icones/favorito.png" alt="icone favorito" />
+                            <img src="/icones/favorito.png" alt="icone favorito" />
                         </BotaoIcone>
-                        <BotaoIcone>
-                            <img src="./public/icones/expandir.png" alt="icone expandir" />
-                        </BotaoIcone>
+                      {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
+                            <img src="/icones/expandir.png" alt="icone expandir" />
+                        </BotaoIcone> }
                     </ButtonContainer>
                 </CaptionFooter>
             </CaptionSection>
