@@ -36,13 +36,13 @@ const StyledButton = styled.button`
     }
 `
 
-export default function Tags() {
+export default function Tags({ aoAlternarTag }) {
     return (
         <TagsSection>
             <TagsP>Busque por tags:</TagsP>
             <TagsContainer>
                 {tags.map((tag) => {
-                    return <StyledButton key={tag.id}>{tag.titulo}</StyledButton>
+                    return <StyledButton onClick={() => aoAlternarTag(tag)} key={tag.id}>{tag.titulo}</StyledButton>
                 })}
             </TagsContainer>
         </TagsSection>

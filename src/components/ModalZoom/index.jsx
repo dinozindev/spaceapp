@@ -31,13 +31,13 @@ const BotaoFechar = styled.button`
 
 // quando o estado da foto existir, o modal estará aberto. Caso a foto não exista, ou seja, seja null, o modal não aparecerá.
 
-export default function ModalZoom({ foto, aoFechar }) {
+export default function ModalZoom({ foto, aoFechar, aoAlternarFavorito }) {
     return (
         <>
         {foto && <>
         <Overlay />
         <Dialog open={foto ? true : false} onClose={aoFechar}>
-            <Imagem foto={foto} expandida={true} />
+            <Imagem foto={foto} expandida={true} aoAlternarFavorito={aoAlternarFavorito}  />
             <form method="dialog">
                 <BotaoFechar formMethod="dialog">
                     <img src="/icones/fechar.png" />

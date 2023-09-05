@@ -49,7 +49,11 @@ const ButtonContainer = styled.div`
 
 
 // passa para a prop aoZoomSolicitado a foto que deseja ser expandida como parâmetro para aoFotoSolicitada, que irá atualizar o estado e fazer a foto aparecer no modal.
-export default function Imagem({ foto, expandida=false, aoZoomSolicitado }) {
+export default function Imagem({ foto, expandida=false, aoZoomSolicitado, aoAlternarFavorito }) {
+    
+    // se a foto estiver favoritada, use o icone ativo. Caso a foto não esteja favoritada, use o icone normal. 
+    const iconeFavorito = foto.favorita ? "/icones/favorito-ativo.png" : "/icones/favorito.png";
+
     return (
         <ImagemContainer $expandida={expandida}>
             <Img src={foto.path} alt={foto.titulo} />
@@ -58,8 +62,8 @@ export default function Imagem({ foto, expandida=false, aoZoomSolicitado }) {
                 <CaptionFooter>
                     <CaptionSource>Fonte/fotógrafo/satélite</CaptionSource>
                     <ButtonContainer>
-                        <BotaoIcone>
-                            <img src="/icones/favorito.png" alt="icone favorito" />
+                        <BotaoIcone onClick={() => aoAlternarFavorito(foto)}>
+                            <img src={iconeFavorito} alt="icone favorito" />
                         </BotaoIcone>
                       {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
                             <img src="/icones/expandir.png" alt="icone expandir" />

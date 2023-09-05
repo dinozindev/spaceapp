@@ -21,16 +21,17 @@ const ListaImagens = styled.ul`
     padding: 0;
 `
 // recebe o método aoFotoSelecionada e passa como valor da prop aoZoomSolicitado do componente Imagem. 
-export default function Galeria({ fotos = [], aoFotoSelecionada }) {
+export default function Galeria({ fotos = [], aoFotoSelecionada, aoAlternarFavorito, aoAlternarTag }) {
     return (
         <>
-            <Tags />
+            <Tags aoAlternarTag={aoAlternarTag} />
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
                     <ListaImagens>
                         {fotos.map(foto => <Imagem
                         aoZoomSolicitado={aoFotoSelecionada}
+                        aoAlternarFavorito={aoAlternarFavorito}
                         key={foto.id} 
                         foto={foto}
                         />)}

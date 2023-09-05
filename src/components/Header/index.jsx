@@ -11,12 +11,12 @@ const StyledHeader = styled.header`
     }
 `
 
-export default function Header() {
+export default function Header({filtro}) {
     return (
         <>
         <StyledHeader>
-            <img src="../../../public/imagens/logo.png" alt="logo spaceapp" />
-            <CampoTexto />
+            <img src="/imagens/logo.png" alt="logo spaceapp" />
+            <CampoTexto filtro={filtro} />
         </StyledHeader>
         </>
     )

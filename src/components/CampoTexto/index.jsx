@@ -18,10 +18,10 @@ const StyledInput = styled.input`
 `
 
 
-export default function CampoTexto() {
+export default function CampoTexto({filtro}) {
     return (
         <>
-        <StyledInput type="text" placeholder="O que você procura?" />
+        <StyledInput type="text" onKeyUp={(e) => filtro(e)} placeholder="O que você procura?" />
         </>
     )
 }
